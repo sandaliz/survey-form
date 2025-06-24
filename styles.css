@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply background image with dark gradient overlay */
+body {
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  padding: 40px 20px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Light overlay blur effect */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08); /* subtle light wash */
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Center the form nicely */
+form {
+  background-color: rgba(173, 205, 255, 0.9);
+  color: #0a1d40;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
+}
+
+/* Typography */
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 2.2em;
+  color: #ffe599;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ddeaff;
+}
+
+/* Ensure content sits above the overlay */
+h1,
+p,
+form {
+  position: relative;
+  z-index: 1;
+}
+
+/* Input styles */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  background: rgba(255, 255, 255, 0.95); /* crisp white fields */
+  color: #0a1d40;
+  border-radius: 8px;
+  border: 1px solid #7aa7ff;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #5a7fb0;
+}
+
+/* Question labels bold */
+label.question-label {
+  color: #0a1d40;
+  font-weight: 600;
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+/* All other labels normal weight (answers) */
+label:not(.question-label) {
+  font-weight: normal;
+  color: #0a1d40;
+}
+
+/* Radio and checkbox inputs + label side by side */
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 8px;
+  transform: scale(1.1);
+  vertical-align: middle;
+}
+
+/* Make checkbox and radio option labels stack vertically */
+.radio-group label,
+.checkbox-group label {
+  display: flex;          /* block-like but aligned */
+  align-items: center;
+  margin-bottom: 10px;    /* spacing between options */
+  font-weight: normal;    /* answers normal weight */
+  color: #0a1d40;
+  cursor: pointer;
+  white-space: normal;    /* allow wrapping if needed */
+}
+
+/* Remove flex wrap from checkbox group, just stack vertically */
+.checkbox-group {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Radio group also block for vertical stacking */
+.radio-group {
+  display: block;
+  margin-top: 10px;
+}
+
+/* Submit button */
+button[type="submit"] {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 24px;
+  background-color: #ffe599;
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #fdd76e;
+}
+
+/* Message box for fading notifications */
+#message-box {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  z-index: 10000;
+  pointer-events: none;
+  max-width: 90vw;
+  word-wrap: break-word;
+}

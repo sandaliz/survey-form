@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ghibli Spirit Survey</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <h1 id="title">🧚 Whisper of the Fans 🧚</h1>
+  <p id="description">Calling all Ghibli dreamers! Share your love for magical worlds, mysterious forests, and adorable forest spirits ✨</p>
+
+  <div id="message-box" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,0.7); color: #ffe599; padding: 10px 20px; border-radius: 10px;
+    font-weight: bold; display: none; z-index: 1000;">
+  </div>
+
+  <form id="survey-form">
+
+    <!-- Name -->
+    <label id="name-label" for="name" class="question-label">Name:</label><br />
+    <input id="name" type="text" name="name" placeholder="Enter your name" required /><br /><br />
+
+    <!-- Email -->
+    <label id="email-label" for="email" class="question-label">Email:</label><br />
+    <input id="email" type="email" name="email" placeholder="Enter your email" required /><br /><br />
+    <div id="email-error" style="color: red; font-size: 0.9em; margin-top: 5px; display: none;"></div>
+
+    <!-- Age -->
+    <label id="number-label" for="number" class="question-label">Age:</label><br />
+    <input id="number" type="number" name="age" placeholder="Enter your age" min="5" max="120" required>
+    <label id="number-error" class="error-message" style="color:red; display:none; font-size:0.9em;"></label><br>
+    
+    <!-- Favorite (Dropdown) -->
+    <label for="dropdown" class="question-label">What's your favorite Ghibli movie?</label><br />
+    <select id="dropdown" name="favoriteMovie" required>
+      <option disabled selected value="">-- Choose a favorite --</option>
+      <option>🌿 Nausicaä of the Valley of the Wind (1984)</option>
+      <option>🏰 Castle in the Sky (1986)</option>
+      <option>🐾 My Neighbor Totoro (1988)</option>
+      <option>🎖️ Grave of the Fireflies (1988)</option>
+      <option>🧹 Kiki's Delivery Service (1989)</option>
+      <option>🌻 Only Yesterday (1991)</option>
+      <option>🛩️ Porco Rosso (1992)</option>
+      <option>🦝 Pom Poko (1994)</option>
+      <option>📖 Whisper of the Heart (1995)</option>
+      <option>🐗 Princess Mononoke (1997)</option>
+      <option>👪 My Neighbors the Yamadas (1999)</option>
+      <option>👻 Spirited Away (2001)</option>
+      <option>🐱 The Cat Returns (2002)</option>
+      <option>✨ Howl's Moving Castle (2004)</option>
+      <option>🐉 Tales from Earthsea (2006)</option>
+      <option>🐠 Ponyo (2008)</option>
+      <option>🕳️ Arrietty (2010)</option>
+      <option>🏞️ From Up on Poppy Hill (2011)</option>
+      <option>🍃 The Wind Rises (2013)</option>
+      <option>🌕 The Tale of the Princess Kaguya (2013)</option>
+      <option>🏚️ When Marnie Was There (2014)</option>
+      <option>🎸 Earwig and the Witch (2020)</option>
+      <option>🕊️ The Boy and the Heron (2023)</option>
+    </select><br /><br />
+
+    <!-- Checkboxes (Multiple Favorites) -->
+    <label class="question-label">Can't pick just one? Select all your faves 😌</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="multiFav" value="All of em"> All of em ❤️</label>
+      <label><input type="checkbox" name="multiFav" value="Nausicaä"> 🌿 Nausicaä of the Valley of the Wind</label>
+      <label><input type="checkbox" name="multiFav" value="Castle in the Sky"> 🏰 Castle in the Sky</label>
+      <label><input type="checkbox" name="multiFav" value="Totoro"> 🐾 My Neighbor Totoro</label>
+      <label><input type="checkbox" name="multiFav" value="Grave of the Fireflies"> 🎖️ Grave of the Fireflies</label>
+      <label><input type="checkbox" name="multiFav" value="Kiki"> 🧹 Kiki's Delivery Service</label>
+      <label><input type="checkbox" name="multiFav" value="Only Yesterday"> 🌻 Only Yesterday</label>
+      <label><input type="checkbox" name="multiFav" value="Porco Rosso"> 🛩️ Porco Rosso</label>
+      <label><input type="checkbox" name="multiFav" value="Pom Poko"> 🦝 Pom Poko</label>
+      <label><input type="checkbox" name="multiFav" value="Whisper"> 📖 Whisper of the Heart</label>
+      <label><input type="checkbox" name="multiFav" value="Mononoke"> 🐗 Princess Mononoke</label>
+      <label><input type="checkbox" name="multiFav" value="Yamadas"> 👪 My Neighbors the Yamadas</label>
+      <label><input type="checkbox" name="multiFav" value="Spirited Away"> 👻 Spirited Away</label>
+      <label><input type="checkbox" name="multiFav" value="The Cat Returns"> 🐱 The Cat Returns</label>
+      <label><input type="checkbox" name="multiFav" value="Howl's Moving Castle"> ✨ Howl's Moving Castle</label>
+      <label><input type="checkbox" name="multiFav" value="Tales from Earthsea"> 🐉 Tales from Earthsea</label>
+      <label><input type="checkbox" name="multiFav" value="Ponyo"> 🐠 Ponyo</label>
+      <label><input type="checkbox" name="multiFav" value="Arrietty"> 🕳️ Arrietty</label>
+      <label><input type="checkbox" name="multiFav" value="Poppy Hill"> 🏞️ From Up on Poppy Hill</label>
+      <label><input type="checkbox" name="multiFav" value="The Wind Rises"> 🍃 The Wind Rises</label>
+      <label><input type="checkbox" name="multiFav" value="Princess Kaguya"> 🌕 The Tale of the Princess Kaguya</label>
+      <label><input type="checkbox" name="multiFav" value="When Marnie Was There"> 🏚️ When Marnie Was There</label>
+      <label><input type="checkbox" name="multiFav" value="Earwig"> 🎸 Earwig and the Witch</label>
+      <label><input type="checkbox" name="multiFav" value="The Boy and the Heron"> 🕊️ The Boy and the Heron</label>
+    </div><br />
+
+    <!-- Recommend Radios -->
+    <label class="question-label">Would you recommend Ghibli movies to others?</label>
+    <div class="radio-group">
+      <label><input type="radio" name="recommend" value="yes" /> Absolutely 💕</label>
+      <label><input type="radio" name="recommend" value="maybe" /> Maybe 😒</label>
+    </div><br />
+
+    <!-- Comments -->
+    <label for="comments" class="question-label">Got a favorite quote, scene, or memory?</label><br />
+    <textarea
+      id="comments"
+      name="comments"
+      rows="4"
+      cols="40"
+      placeholder="Share your Ghibli magic..."
+    ></textarea><br /><br />
+
+    <!-- Submit -->
+    <button id="submit" type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
