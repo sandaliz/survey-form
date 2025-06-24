@@ -6,8 +6,7 @@ A fan-inspired form using **HTML**, **CSS**, and **JavaScript** with live valida
 - **HTML5** – Structured semantic form elements
 - **CSS3** – Custom styles, flying animation, and twinkling stars
 - **JavaScript** – Real-time input validation, interactive dropdown & checkboxes, smooth message feedback
-- **GitHub Pages** – Free hosting & deployment<img width="1455" alt="Screenshot 2025-06-24 at 15 40 19" src="https://github.com/user-attachments/assets/e3228d3d-8150-49eb-b369-1805b549d5de" />
-
+- **GitHub Pages** – hosting & deployment
 
 ## Highlights
 
